@@ -21,7 +21,7 @@ public class ConvertDate {
     }
 
     public String convertLongToDayOfWeek(long dateLong) {
-        String dateString = new DateTime(dateLong).toString("yyyy-MM-dd", Locale.ENGLISH);
+        String dateString = new DateTime(dateLong).toString("EEEE", Locale.ENGLISH);
 
         System.out.println(dateString);
 
