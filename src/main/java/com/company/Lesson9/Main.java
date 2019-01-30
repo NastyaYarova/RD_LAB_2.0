@@ -18,6 +18,8 @@ public class Main {
         WebElement element = driver.findElement(By.xpath("//input[@title = 'Пошук']"));
         element.sendKeys("Who is Zarina?");
         element.sendKeys(Keys.RETURN);
+
+
         driver.quit();
     }
 }
