@@ -11,9 +11,12 @@ import java.util.concurrent.TimeUnit;
 public class FacebookTest {
 
     public void testLogPass(){
+
+        //TODO: please commit "chromedriver.exe" to Git.
         System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
+        // Usage of waiters - good!
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
@@ -36,6 +39,8 @@ public class FacebookTest {
         buttonLogin.sendKeys(Keys.RETURN);
 
         WebElement elementError = driver.findElement(By.xpath("//div[@class='_4rbf _53ij']"));
+
+        //TODO: Add error message verification here.
 
         driver.quit();
     }
