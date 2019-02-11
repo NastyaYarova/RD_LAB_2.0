@@ -35,22 +35,19 @@ public class TestFacebookLoginPage {
     @Test
     public void checkWrongPassword() {
         FacebookEnterPage facebookEnterPage = PageFactory.initElements(driver, FacebookEnterPage.class);
-        facebookEnterPage.signUp("+0980261901", "12345678");
+        facebookEnterPage.signUp("+0980261901", "111111111");
         facebookEnterPage.clickButtonLog();
         FacebookLogInPage facebookLogInPage = PageFactory.initElements(driver, FacebookLogInPage.class);
-        //facebookLogInPage.compareErrorTxt();
-        Assert.assertTrue( facebookLogInPage.compareErrorTxt());
+        Assert.assertTrue(facebookLogInPage.compareErrorTxtWrongPass());
     }
 
     @Test
-    @Ignore
     public void checkWrongMail() {
         FacebookEnterPage facebookEnterPage = PageFactory.initElements(driver, FacebookEnterPage.class);
-        facebookEnterPage.signUp("+0980261901", "12345678");
+        facebookEnterPage.signUp("sdfvsdfvs@gmail.com", "2130921309");
         facebookEnterPage.clickButtonLog();
         FacebookLogInPage facebookLogInPage = PageFactory.initElements(driver, FacebookLogInPage.class);
-        //facebookLogInPage.compareErrorTxt();
-        Assert.assertTrue( facebookLogInPage.compareErrorTxt());
+        Assert.assertTrue(facebookLogInPage.compareErrorTxtWrongMail());
     }
 
     @After

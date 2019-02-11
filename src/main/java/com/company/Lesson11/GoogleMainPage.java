@@ -24,6 +24,7 @@ public class GoogleMainPage {
         return new GoogleMainPage(driver);
     }
 
+
     public GoogleSearchPage clickButtonSearch() {
         searchButton.click();
         return new GoogleSearchPage(driver);

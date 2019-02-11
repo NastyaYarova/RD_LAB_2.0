@@ -26,16 +26,16 @@ public class Main {
 
         FacebookEnterPage facebookEnterPage = PageFactory.initElements(driver,FacebookEnterPage.class);
         facebookEnterPage.signUp("+0980261901", "12345678");
-        facebookEnterPage.clickButtonLog();
+        facebookEnterPage.enterFieldPassword();
 
         FacebookLogInPage facebookLogInPage = PageFactory.initElements(driver, FacebookLogInPage.class);
-        System.out.println(facebookLogInPage.compareErrorTxt());
-        if (facebookLogInPage.compareErrorTxt()==true) {
+        //System.out.println(facebookLogInPage.compareErrorTxtWrongPass());
+        if (facebookLogInPage.compareErrorTxtWrongPass()) {
             System.out.println("Test passed =)");
         } else {
             System.out.println("Test failed =(");
         }
 
-       driver.quit();
+       //driver.quit();
     }
 }

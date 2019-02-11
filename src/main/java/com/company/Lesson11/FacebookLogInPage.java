@@ -14,45 +14,39 @@ public class FacebookLogInPage {
     @FindBy(xpath = "//div[@class='_4rbf _53ij']")
     private WebElement elementError;
 
-//    public String elementErrorTxt() {
-//        String elementErrorTxt = elementError.getText();
-//        return elementErrorTxt;
-//    }
-
-    public boolean compareErrorTxt() {
-
-//        String txtEn = "The email or phone number you’ve entered doesn’t match any account.";
-//        String txtRu = "Вы ввели неверный пароль.";
-//        String txtUa = "Ви ввели неправильний пароль. Забули пароль?";
-//        String elementErrorTxt = elementErrorTxt();
-//        boolean testResult;
-//
-//        if (elementErrorTxt.contains(txtEn)) {
-//            testResult = true;
-//        }if (elementErrorTxt.contains(txtRu)) {
-//            testResult = true;
-//        }if (elementErrorTxt.contains(txtUa)) {
-//            testResult = true;
-//        } else {
-//            testResult = false;
-//        }
-//        return testResult;
+    public String elementErrorTxt() {
         String elementErrorTxt = elementError.getText();
-       // return elementErrorTxt;
+        return elementErrorTxt;
+    }
+
+    public boolean compareErrorTxtWrongPass() {
+        String elementErrorTxt = elementErrorTxt();
 
         if (elementErrorTxt.contains("Ви ввели неправильний пароль")) {
-
             return true;
         }
-        if (elementErrorTxt.contains("The email or phone number you’ve entered doesn’t match any account.")) {
-
+        if (elementErrorTxt.contains("The password you’ve entered is incorrect")) {
             return true;
         }
         if (elementErrorTxt.contains("Вы ввели неверный пароль")) {
-
             return true;
         } else {
+            return false;
+        }
+    }
 
+    public boolean compareErrorTxtWrongMail() {
+        String elementErrorTxt = elementErrorTxt();
+
+        if (elementErrorTxt.contains("Эл. адрес, который вы указали, не соответствует ни одному аккаунту")) {
+            return true;
+        }
+        if (elementErrorTxt.contains("The email you’ve entered doesn’t match any account")) {
+            return true;
+        }
+        if (elementErrorTxt.contains("Указана електронна адреса (або номер телефону) не пов'язана з жодним обліковим записом")) {
+            return true;
+        } else {
             return false;
         }
     }

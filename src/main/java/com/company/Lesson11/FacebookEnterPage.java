@@ -1,5 +1,6 @@
 package com.company.Lesson11;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +20,7 @@ public class FacebookEnterPage {
     @FindBy(id = "pass")
     private WebElement fieldPassword;
 
-    @FindBy(id = "u_0_2")
+    @FindBy(id = "loginbutton")
     private WebElement buttonLog;
 
 
@@ -32,7 +33,10 @@ public class FacebookEnterPage {
         fieldPassword.sendKeys(password);
         return new FacebookEnterPage(driver);
     }
-
+    public FacebookLogInPage enterFieldPassword() {
+        fieldPassword.sendKeys(Keys.RETURN);
+        return new FacebookLogInPage(driver);
+    }
     public FacebookLogInPage clickButtonLog() {
         buttonLog.click();
         return new FacebookLogInPage(driver);
@@ -42,6 +46,7 @@ public class FacebookEnterPage {
         this.inputMail(mail);
         this.inputPassword(password);
         this.clickButtonLog();
+        this.enterFieldPassword();
         return new FacebookLogInPage(driver);
     }
 }
