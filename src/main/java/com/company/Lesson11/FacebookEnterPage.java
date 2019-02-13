@@ -8,11 +8,9 @@ import org.openqa.selenium.support.FindBy;
 public class FacebookEnterPage {
     private WebDriver driver;
 
-
     public FacebookEnterPage(WebDriver driver) {
         this.driver = driver;
     }
-
 
     @FindBy(id = "email")
     private WebElement fieldMail;
@@ -22,7 +20,6 @@ public class FacebookEnterPage {
 
     @FindBy(id = "loginbutton")
     private WebElement buttonLog;
-
 
     public FacebookEnterPage inputMail(String mail) {
         fieldMail.sendKeys(mail);

@@ -25,6 +25,7 @@ public class TestFacebookLoginPage {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://www.google.com");
+        
         GoogleMainPage googleMainPage = PageFactory.initElements(driver, GoogleMainPage.class);
         googleMainPage.inputText("facebook");
         googleMainPage.enterSearch();
